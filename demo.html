@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Palette Generator Demo</title>
+</head>
+<body>
+  <canvas id="canvas" width="800" height="800"></canvas>
+  <script src="palette.js"></script>
+  <script>
+    // Number of colors shades in the palettes
+    var numSteps = 50;
+
+    // Colors arrays to generate the palettes
+    var colors1 = [
+      new Color(255, 0, 0, 255),
+      new Color(0, 255, 0, 255),
+    ];
+    var colors2 = [
+      new Color(255, 0, 0, 255),
+      new Color(0, 255, 0, 255),
+      new Color(0, 0, 255, 255),
+    ];
+    var colors3 = [
+      new Color(255, 0, 0, 255),
+      new Color(255, 255, 0, 255),
+      new Color(0, 255, 255, 255),
+      new Color(0, 0, 255, 255),
+    ];
+
+    // Instanciation of the palettes objects
+    var colorMap1 = new ColorMap(numSteps, colors1);
+    var colorMap2 = new ColorMap(numSteps, colors2);
+    var colorMap3 = new ColorMap(numSteps, colors3);
+
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var width = canvas.width;
+
+    for (var i = 0; i < width; i ++) {
+      var d = i / (width - 1);
+
+      ctx.fillStyle = colorMap1.getColor(d).rgb();
+      ctx.fillRect(i, 10, 1, 50);
+
+      ctx.fillStyle = colorMap2.getColor(d).rgb();
+      ctx.fillRect(i, 70, 1, 50);
+
+      ctx.fillStyle = colorMap3.getColor(d).rgb();
+      ctx.fillRect(i, 130, 1, 50);
+    }
+  </script>
+</body>
+</html>
