@@ -2,7 +2,7 @@
  * Small library to generate a color palette.
  *
  * @namespace Palette
- * @version 0.1.0
+ * @version 0.2.0
  * @author Julien Descamps
  */
 var Palette = (function() {
