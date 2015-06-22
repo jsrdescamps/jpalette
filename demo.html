@@ -2,53 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Palette Generator Demo</title>
+  <title>PaletteJS demo</title>
 </head>
 <body>
   <canvas id="canvas" width="800" height="800"></canvas>
   <script src="palette.js"></script>
   <script>
-    // Number of colors shades in the palettes
-    var numSteps = 50;
-
-    // Colors arrays to generate the palettes
-    var colors1 = [
-      new Palette.Color(255, 0, 0, 255),
-      new Palette.Color(0, 255, 0, 255),
-    ];
-    var colors2 = [
-      new Palette.Color(255, 0, 0, 255),
-      new Palette.Color(0, 255, 0, 255),
-      new Palette.Color(0, 0, 255, 255),
-    ];
-    var colors3 = [
+    // Predefined palettes
+    var colorMap1 = Palette.ColorMap.getPredefined('whitetoblack')(20);
+    var colorMap2 = Palette.ColorMap.getPredefined('rgb')(50);
+    // Manual instanciation palettes
+    var colorMap3 = new Palette.ColorMap(100, [
       new Palette.Color(255, 0, 0, 255),
       new Palette.Color(255, 255, 0, 255),
       new Palette.Color(0, 255, 255, 255),
       new Palette.Color(0, 0, 255, 255),
-    ];
+    ]);
 
-    // Instanciation of the palettes objects
-    var colorMap1 = new Palette.ColorMap(numSteps, colors1);
-    var colorMap2 = new Palette.ColorMap(numSteps, colors2);
-    var colorMap3 = new Palette.ColorMap(numSteps, colors3);
-
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
     var width = canvas.width;
 
     for (var i = 0; i < width; i ++) {
       var d = i / (width - 1);
 
       ctx.fillStyle = colorMap1.getColor(d).rgb();
-      ctx.fillRect(i, 10, 1, 50);
+      ctx.fillRect(i, 20, 1, 50);
 
       ctx.fillStyle = colorMap2.getColor(d).rgb();
-      ctx.fillRect(i, 70, 1, 50);
+      ctx.fillRect(i, 100, 1, 50);
 
       ctx.fillStyle = colorMap3.getColor(d).rgb();
-      ctx.fillRect(i, 130, 1, 50);
+      ctx.fillRect(i, 180, 1, 50);
     }
+    ctx.fillStyle = 'black';
+    ctx.fillText('Predefined: black to white, 20 steps', 0, 10);
+    ctx.fillText('Predefined : red to green to blue, 50 steps', 0, 90);
+    ctx.fillText('Manual: 4 colors, 100 steps', 0, 170);
   </script>
 </body>
 </html>
