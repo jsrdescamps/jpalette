@@ -59,9 +59,9 @@ var Palette = (function() {
     if (colors.length <= 1) {
       throw 'Two colors minimum.';
     }
-    this.map = [];
+    this.map      = [];
     this.numSteps = numSteps;
-    this.colors = colors;
+    this.colors   = colors;
     this.init();
   };
 
