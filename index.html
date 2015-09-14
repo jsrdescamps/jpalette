@@ -18,6 +18,7 @@
   <canvas id="canvas" width="800" height="500"></canvas>
   <script src="jpalette.js"></script>
   <script>
+  (function() {
     // Predefined palettes examples
     var colorMap1 = jPalette.ColorMap.get('whitetoblack')(20);
     var colorMap2 = jPalette.ColorMap.get('rgb')(50);
@@ -66,6 +67,7 @@
     ctx.fillText('Predefined : "fire", 1000 steps', 0, 250);
     ctx.fillText('Predefined : "sky", 1000 steps', 0, 330);
     ctx.fillText('Predefined : "night", 1000 steps', 0, 410);
+  })();
   </script>
 </body>
 </html>
