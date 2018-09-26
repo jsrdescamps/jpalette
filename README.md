@@ -1,9 +1,11 @@
 # jPalette
+
 A small javascript library to generate a color palette.
 
 [Demo](http://jsrdescamps.github.io/jpalette/)
 
 ## How to use
+
 There are two types of objects: Color and ColorMap.
 
 A Color object is defined in RGBA format.
