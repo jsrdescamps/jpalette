@@ -2,7 +2,7 @@
   "name": "jpalette",
   "version": "1.0.0",
   "description": "Small Javascript library to generate a color palette.",
-  "main": "./dist/jpalette.js",
+  "main": "./dist/jpalette.min.js",
   "scripts": {
     "build": "webpack --progress --mode=production -o dist/jpalette.min.js",
     "dev": "webpack --progress",
