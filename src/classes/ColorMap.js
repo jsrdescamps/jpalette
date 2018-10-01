@@ -1,9 +1,11 @@
 import Color from './Color.js';
+
 /**
  * @export
  * @class ColorMap
  */
 export default class ColorMap {
+
   /** 
    * Creates an instance of ColorMap.
    * @param {any} numSteps 
@@ -19,6 +21,7 @@ export default class ColorMap {
     this.colors   = colors;
     this.init();
   }
+
   /**
    * Init method.
    */
@@ -41,6 +44,7 @@ export default class ColorMap {
       this.map.push(new Color(compute('r'), compute('g'), compute('b'), compute('a')));
     }
   }
+
   /**
    * Return a color instance from a decimal number between 0 and 1.
    * 
@@ -54,6 +58,36 @@ export default class ColorMap {
     
     return this.map[index];
   }
+
+  /**
+   * Convert to JSON.
+   *
+   * @return {Object}
+   * @memberof Color
+   */
+  toJSON() {
+    return {
+      _type     : 'ColorMap',
+      numSteps  : this.numSteps,
+      colors    : this.colors.map(function(i) { return i.toJSON(); })
+    };
+  }
+
+  /**
+   * Revive from JSON.
+   *
+   * @static
+   * @param {Object} o
+   * @return {Color}
+   * @memberof Color
+   */
+  static revive(o) {
+    return new ColorMap(
+      o.numSteps,
+      o.colors.map(function(i) { return Color.revive(i); })
+    );
+  }
+
   /**
    * Return a predefined palette.
    * 

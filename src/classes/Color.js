@@ -42,6 +42,35 @@ export default class Color {
   rgb() {
     return `rgb(${this.r},${this.g},${this.b})`;
   }
+
+  /**
+   * Convert to JSON.
+   *
+   * @return {Object}
+   * @memberof Color
+   */
+  toJSON() {
+    return {
+      _type : 'Color',
+      r     : this.r,
+      g     : this.g,
+      b     : this.b,
+      a     : this.a
+    };
+  }
+
+  /**
+   * Revive from JSON.
+   *
+   * @static
+   * @param {Object} o
+   * @return {Color}
+   * @memberof Color
+   */
+  static revive(o) {
+    return new Color(o.r, o.g, o.b, o.a);
+  }
+
   /**
    * Return a predefined color.
    * 

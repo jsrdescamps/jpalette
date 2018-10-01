@@ -2,7 +2,7 @@
 
 A small javascript library to generate a color palette.
 
-[Demo](http://jsrdescamps.github.io/jpalette/)
+[Demo](https://jsrdescamps.github.io/jpalette/)
 
 ## How to use
 
