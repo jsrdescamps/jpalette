@@ -1,11 +1,11 @@
 {
   "name": "jpalette",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Small Javascript library to generate a color palette.",
-  "main": "./dist/jpalette.min.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "webpack --progress --mode=production -o dist/jpalette.min.js",
-    "dev": "webpack --progress",
+    "build": "webpack --progress --config webpack.prod.js",
+    "dev": "webpack --progress --config webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.2",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
   }
 }
