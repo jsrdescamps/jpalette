@@ -4,6 +4,12 @@ A small javascript library to generate a color palette.
 
 [Demo](https://jsrdescamps.github.io/jpalette/)
 
+## How to install
+
+```bash
+npm install jpalette --save
+```
+
 ## How to use
 
 There are two types of objects: Color and ColorMap.
@@ -41,7 +47,9 @@ console.log(color.rgb());
 ```javascript
 var colorMap = jPalette.ColorMap.get('sky')(1000);
 ```
+
 Available palettes:
+
 * whitetoblack
 * blacknwhite
 * rgb
@@ -56,4 +64,29 @@ Available palettes:
 var color = jPalette.Color.get('cyan')(255); // Alpha transparancy set to 255
 ```
 
-Available colors: see in code :-)
+Available palettes:
+
+* white
+* black
+* red
+* green
+* blue
+* yellow
+* cyan
+* magenta
+* indigo
+* pink
+* orange
+* apple
+* manganese
+* guppie
+* purple
+* teal
+* olive
+* coral
+
+## How to build
+
+```bash
+npm run build
+```
