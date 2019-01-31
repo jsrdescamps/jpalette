@@ -1,0 +1,27 @@
+{
+  "name": "jpalette-demo",
+  "version": "1.0.0",
+  "description": "jPalette library demo",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsrdescamps/jpalette.git"
+  },
+  "author": "Julien Descamps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsrdescamps/jpalette/issues"
+  },
+  "homepage": "https://github.com/jsrdescamps/jpalette#readme",
+  "devDependencies": {
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "jpalette": "^1.0.4"
+  }
+}
