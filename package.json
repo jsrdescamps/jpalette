@@ -1,6 +1,6 @@
 {
   "name": "jpalette",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Small Javascript library to generate a color palette.",
   "main": "src/index.js",
   "scripts": {
